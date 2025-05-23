@@ -24,3 +24,23 @@ h1, h2, h3 {
   display: inline-block;
   margin-top: 20px;
 }
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about a {
+  color: #C3073F;
+  text-decoration: underline;
+}

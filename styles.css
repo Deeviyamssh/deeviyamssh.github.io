@@ -11,6 +11,29 @@ body {
   margin: 0;
   padding: 20px;
 }
+.site-nav {
+  background-color: #1A1A1D;
+  padding: 10px 20px;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.site-nav a {
+  color: #F5F5F5;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9em;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
 
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
@@ -131,4 +154,37 @@ h1, h2, h3 {
   border-radius: 4px;
   cursor: not-allowed;
   opacity: 0.6;
+}
+.skills-preview {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.skills-preview ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.skills-preview li {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-left: 5px solid #C3073F;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.skills-preview .cta-button {
+  margin-top: 20px;
+}
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1A1A1D;
+  color: #F5F5F5;
+  margin-top: 40px;
+  font-size: 0.8em;
 }

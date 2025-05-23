@@ -1,3 +1,50 @@
+:root {
+  /* Light theme colors */
+  --bg-color: #F5F5F5;
+  --text-color: #1A1A1D;
+  --accent-color: #C3073F;
+  --nav-bg: #1A1A1D;
+  --nav-text: #F5F5F5;
+}
+
+[data-theme="dark"] {
+  /* Dark theme overrides */
+  --bg-color: #1A1A1D;
+  --text-color: #F5F5F5;
+  --accent-color: #FF6F61;
+  --nav-bg: #2A2A2A;
+  --nav-text: #F5F5F5;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+/* Update other rules to use variables */
+.cta-button {
+  background-color: var(--accent-color);
+}
+.site-nav {
+  background-color: var(--nav-bg);
+}
+.site-nav a {
+  color: var(--nav-text);
+}
+/* …and so on for project cards, footer, etc. */
+.project-card {
+  background: var(--bg-color);
+  border-color: #ddd;
+}
+.site-footer {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: white;
   color: black;
@@ -14,6 +61,11 @@ body {
 .site-nav {
   background-color: #1A1A1D;
   padding: 10px 20px;
+}
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .site-nav ul {
@@ -241,4 +293,46 @@ h1, h2, h3 {
 
 .project-card a:hover {
   text-decoration: underline;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 10px 15px;
+  font-size: 24px;
+  background-color: #C3073F;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  z-index: 101;
+}
+
+#backToTop:hover {
+  background-color: #900027;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-card { flex-direction: column; }
+  .project-card img { max-width: 100%; margin-bottom: 15px; }
+  .site-nav ul { flex-direction: column; gap: 10px; }
 }

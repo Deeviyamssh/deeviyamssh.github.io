@@ -8,10 +8,17 @@
 
   <!-- Link to CSS file -->
   <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brief summary of this page’s content here." />
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 </head>
 
 <body>
   <nav class="site-nav">
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -34,9 +41,43 @@
   </ul>
   <a href="about.html" class="cta-button">Learn More About Me</a>
  </section>
+ <section class="hero" data-aos="fade-down">…</section>
+<div class="project-card" data-aos="fade-up" data-aos-delay="100">…</div>
+
   <footer class="site-footer">
   <p>© 2025 Deeviyamssh. Built with ❤️ and AI tools.</p>
   </footer>
+  <button id="backToTop" title="Back to top">↑</button>
+  <script>
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  };
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const theme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+
+  toggle.addEventListener('click', () => {
+    const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true });
+</script>
 
 
 </body>

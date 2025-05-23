@@ -4,10 +4,18 @@
   <title>Projects | Deeviyamssh</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Brief summary of this page’s content here." />
+
 </head>
 <body>
 
   <nav class="site-nav">
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -38,10 +46,27 @@
     <!-- Add more project-card divs here -->
 
   </section>
+<section class="hero" data-aos="fade-down">…</section>
+<div class="project-card" data-aos="fade-up" data-aos-delay="100">…</div>
 
   <footer class="site-footer">
     <p>© 2025 Deeviyamssh. Built with ❤️ and AI tools.</p>
   </footer>
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const theme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+
+  toggle.addEventListener('click', () => {
+    const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true });
+</script>
 
 </body>
 </html>

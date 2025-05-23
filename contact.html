@@ -4,6 +4,11 @@
   <title>Contact | Deeviyamssh</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Brief summary of this page’s content here." />
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -31,6 +36,24 @@
       <button type="submit" disabled>Send (Not functional yet)</button>
     </form>
   </section>
+  <section class="hero" data-aos="fade-down">…</section>
+<div class="project-card" data-aos="fade-up" data-aos-delay="100">…</div>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const theme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+
+  toggle.addEventListener('click', () => {
+    const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true });
+</script>
 
 </body>
 </html>

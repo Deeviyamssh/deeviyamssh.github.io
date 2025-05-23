@@ -44,3 +44,31 @@ h1, h2, h3 {
   color: #C3073F;
   text-decoration: underline;
 }
+.projects {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.project-card {
+  border: 1px solid #ccc;
+  border-left: 5px solid #C3073F;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card a {
+  color: #C3073F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}

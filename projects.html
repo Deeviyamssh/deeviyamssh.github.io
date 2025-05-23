@@ -1,72 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Deeviyamssh</title>
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  
+  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Brief summary of this page’s content here." />
-
+  <!-- Your Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <!-- NAV -->
   <nav class="site-nav">
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
-
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
   </nav>
 
-  <section class="projects">
+  <section class="projects" data-aos="fade-up">
     <h2>My Projects</h2>
 
-    <div class="project-card">
-      <img src="images/house-price-predictor.png" alt="House Price Predictor" />
-      <h3>House Price Predictor</h3>
-      <p>Regression model using Python and scikit-learn to predict house prices based on features like location and size.</p>
-      <p><strong>Tech Stack:</strong> Python, scikit-learn, pandas</p>
-      <a href="https://github.com/Deeviyamssh/house-price-predictor" target="_blank">View on GitHub</a>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="images/house-price-predictor.png" alt="House Price Predictor" loading="lazy"/>
+      <div class="card-content">
+        <h3>House Price Predictor</h3>
+        <p>Regression model using Python and scikit-learn to predict house prices based on features like location and size.</p>
+        <p><strong>Tech Stack:</strong> Python, scikit-learn, pandas</p>
+        <a href="https://github.com/Deeviyamssh/house-price-predictor" target="_blank">View on GitHub</a>
+      </div>
     </div>
 
-    <div class="project-card">
-      <img src="images/sentiment-analysis.png" alt="Sentiment Analysis" />
-      <h3>Sentiment Analysis Tool</h3>
-      <p>Python-based NLP project analyzing user reviews to classify sentiment.</p>
-      <p><strong>Tech Stack:</strong> Python, NLTK, TextBlob</p>
-      <a href="https://github.com/Deeviyamssh/sentiment-analysis" target="_blank">View on GitHub</a>
+    <div class="project-demo" data-aos="fade-up" data-aos-delay="200">
+      <h3>Interactive Demo</h3>
+      <iframe
+        width="100%"
+        height="400"
+        frameborder="0"
+        src="https://plotly.com/~yourusername/123.embed?height=400&theme=light"
+        loading="lazy"
+      ></iframe>
     </div>
 
-    <!-- Add more project-card divs here -->
+    <!-- Add more .project-card blocks here as needed -->
 
   </section>
-<section class="hero" data-aos="fade-down">…</section>
-<div class="project-card" data-aos="fade-up" data-aos-delay="100">…</div>
 
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
     <p>© 2025 Deeviyamssh. Built with ❤️ and AI tools.</p>
   </footer>
-<script>
-  const toggle = document.getElementById('theme-toggle');
-  const theme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', theme);
 
-  toggle.addEventListener('click', () => {
-    const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-</script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 700, once: true });
-</script>
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top">↑</button>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 700, once: true });</script>
+
+  <!-- Theme Toggle & Back-to-Top (same as index.html) -->
+  <script>
+    // Theme toggle
+    const toggle = document.getElementById('theme-toggle');
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    toggle.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+    // Back to top
+    const backBtn = document.getElementById('backToTop');
+    window.onscroll = () => backBtn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 </body>
 </html>

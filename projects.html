@@ -5,17 +5,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
   <section class="projects">
     <h2>My Projects</h2>
 
     <div class="project-card">
-      <h3>🏡 House Price Predictor</h3>
-      <p>A regression model using Python and scikit-learn to predict house prices based on features like location, size, and amenities.</p>
+      <img src="images/house-price-predictor.png" alt="House Price Predictor" />
+      <h3>House Price Predictor</h3>
+      <p>Regression model using Python and scikit-learn to predict house prices based on features like location and size.</p>
+      <p><strong>Tech Stack:</strong> Python, scikit-learn, pandas</p>
       <a href="https://github.com/Deeviyamssh/house-price-predictor" target="_blank">View on GitHub</a>
     </div>
 
+    <div class="project-card">
+      <img src="images/sentiment-analysis.png" alt="Sentiment Analysis" />
+      <h3>Sentiment Analysis Tool</h3>
+      <p>Python-based NLP project analyzing user reviews to classify sentiment.</p>
+      <p><strong>Tech Stack:</strong> Python, NLTK, TextBlob</p>
+      <a href="https://github.com/Deeviyamssh/sentiment-analysis" target="_blank">View on GitHub</a>
+    </div>
+
+    <!-- Add more project-card divs here -->
+
   </section>
+
+  <footer class="site-footer">
+    <p>© 2025 Deeviyamssh. Built with ❤️ and AI tools.</p>
+  </footer>
+
 </body>
 </html>

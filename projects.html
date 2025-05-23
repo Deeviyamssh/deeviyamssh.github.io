@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore my AI/ML projects, including a House Price Predictor and interactive demos." />
+  <link rel="icon" href="favicon.ico" />
+
   <title>Projects | Deeviyamssh</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  
+
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Your Styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,19 +22,20 @@
   <!-- NAV -->
   <nav class="site-nav">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" class="underline-hover">Home</a></li>
+      <li><a href="about.html" class="underline-hover">About</a></li>
+      <li><a href="projects.html" class="underline-hover active">Projects</a></li>
+      <li><a href="contact.html" class="underline-hover">Contact</a></li>
     </ul>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
   </nav>
 
+  <!-- PROJECTS LIST -->
   <section class="projects" data-aos="fade-up">
     <h2>My Projects</h2>
 
     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-      <img src="images/house-price-predictor.png" alt="House Price Predictor" loading="lazy"/>
+      <img src="images/house-price-predictor.png" alt="House Price Predictor screenshot" loading="lazy" />
       <div class="card-content">
         <h3>House Price Predictor</h3>
         <p>Regression model using Python and scikit-learn to predict house prices based on features like location and size.</p>
@@ -51,7 +55,7 @@
       ></iframe>
     </div>
 
-    <!-- Add more .project-card blocks here as needed -->
+    <!-- add more project-card blocks here as needed -->
 
   </section>
 
@@ -63,25 +67,22 @@
   <!-- BACK TO TOP -->
   <button id="backToTop" title="Back to top">↑</button>
 
-  <!-- AOS JS -->
+  <!-- AOS & Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 700, once: true });</script>
-
-  <!-- Theme Toggle & Back-to-Top (same as index.html) -->
   <script>
-    // Theme toggle
+    AOS.init({ duration: 700, once: true });
     const toggle = document.getElementById('theme-toggle');
-    const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-    toggle.addEventListener('click', () => {
-      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    const saved = localStorage.getItem('theme')||'light';
+    document.documentElement.setAttribute('data-theme', saved);
+    toggle.onclick = ()=>{ 
+      const next = document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-    });
-    // Back to top
+    };
     const backBtn = document.getElementById('backToTop');
-    window.onscroll = () => backBtn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.onscroll = ()=> backBtn.style.display=window.scrollY>300?'block':'none';
+    backBtn.onclick = ()=>window.scrollTo({top:0,behavior:'smooth'});
   </script>
+
 </body>
 </html>

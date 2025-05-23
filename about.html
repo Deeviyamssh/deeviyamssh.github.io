@@ -1,22 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Deeviyamssh—AI/ML engineer specializing in predictive modeling and optimization." />
+  <link rel="icon" href="favicon.ico" />
+
   <title>About Me | Deeviyamssh</title>
 
-  <!-- Fonts & CSS -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
-  <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Brief summary of this page’s content here." />
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
 </head>
-
 <body>
-  <section class="about">
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html" class="underline-hover">Home</a></li>
+      <li><a href="#about" class="underline-hover">About</a></li>
+      <li><a href="projects.html" class="underline-hover">Projects</a></li>
+      <li><a href="contact.html" class="underline-hover">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>Hello! I’m Deeviyamssh, passionate about building predictive models and solving real-world problems using AI & Machine Learning.</p>
+    <p>
+      Hello! I’m Deeviyamssh, passionate about building predictive models and solving real-world
+      problems using AI &amp; Machine Learning.
+    </p>
 
     <h3>🔧 Skills</h3>
     <ul>
@@ -26,27 +46,34 @@
       <li>Libraries: Pandas, NumPy, scikit-learn, TensorFlow</li>
     </ul>
 
-    <p><strong>Résumé:</strong> <a href="assets/Deeviyamssh_Resume.pdf" download>Download PDF</a> (coming soon)</p>
+    <p>
+      <strong>Résumé:</strong>
+      <a href="assets/Deeviyamssh_Resume.pdf" download>Download PDF</a>
+    </p>
   </section>
-  <section class="hero" data-aos="fade-down">…</section>
-<div class="project-card" data-aos="fade-up" data-aos-delay="100">…</div>
 
-  <script>
-  const toggle = document.getElementById('theme-toggle');
-  const theme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', theme);
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top">↑</button>
 
-  toggle.addEventListener('click', () => {
-    const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-</script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 700, once: true });
-</script>
+  <!-- AOS & Scripts (same as index.html) -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>s
+    AOS.init({ duration: 700, once: true });
+    document.querySelectorAll('.radial-chart').forEach(chart => {
+      const perc = chart.getAttribute('data-perc')/100; chart.style.setProperty('--perc', perc);
+    });
+    const toggle = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme')||'light';
+    document.documentElement.setAttribute('data-theme', saved);
+    toggle.onclick = ()=>{ 
+      const next = document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    };
+    const backBtn = document.getElementById('backToTop');
+    window.onscroll = ()=> backBtn.style.display=window.scrollY>300?'block':'none';
+    backBtn.onclick = ()=>window.scrollTo({top:0,behavior:'smooth'});
+  </script>
 
 </body>
 </html>
-

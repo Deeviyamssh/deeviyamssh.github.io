@@ -1,153 +1,76 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="I harness data-driven intelligence to solve complex challenges—portfolio of AI/ML projects and skills." />
-  <link rel="icon" href="favicon.ico" />
-
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Deeviyamssh | Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
-
-  <!-- AOS CSS (Animate On Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="styles.css"/>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.7.1/tsparticles.bundle.min.js"></script>
-
-  <!-- Your Styles -->
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="site-nav">
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button id="theme-toggle">🌓</button>
-</nav>
+  <nav class="site-nav">…</nav>
 
+  <!-- Hero (no particles) -->
+  <section id="hero" class="hero">…</section>
 
-  <!-- FULLSCREEN SCROLL CONTAINER -->
-  <div class="scroll-container">
+  <!-- About with tsParticles container -->
+  <section id="about" class="particle-section" data-particles-section>
+    <canvas id="particles-about"></canvas>
+    <div class="content">
+      <h2>About Me</h2><p>Hello! I’m Deeviyamssh…</p>
+    </div>
+  </section>
 
-    <!-- HERO SECTION -->
-     <section id="about" data-aos="fade-up">
-  <!-- paste everything from about.html's <section id="about"> … </section> here -->
-</section>
+  <!-- Projects -->
+  <section id="projects" class="particle-section" data-particles-section>
+    <canvas id="particles-projects"></canvas>
+    <div class="content">
+      <h2>Projects</h2><p>House Price Predictor…</p>
+    </div>
+  </section>
 
-    <section id="hero" class="hero" data-aos="fade-down">
-      <h1 data-aos="fade-down" data-aos-delay="200">
-        I harness data-driven intelligence to solve complex challenges
-      </h1>
-      <p data-aos="fade-up" data-aos-delay="400">
-        Turning models into meaningful impact.
-      </p>
-      <a href="projects.html" class="cta-button" data-aos="zoom-in" data-aos-delay="600">
-        View Projects
-      </a>
-    </section>
+  <!-- Contact -->
+  <section id="contact" class="particle-section" data-particles-section>
+    <canvas id="particles-contact"></canvas>
+    <div class="content">
+      <h2>Contact</h2><p>deeviyamsshkasala@gmail.com</p>
+    </div>
+  </section>
 
-    <!-- SKILLS PREVIEW -->
-    <section id="skills" class="skills-preview" data-aos="fade-up">
-      <h2>Key Skills</h2>
-      <ul class="radial-skills">
-        <li>
-          <div class="radial-chart" data-perc="95"><span>Python</span></div>
-        </li>
-        <li>
-          <div class="radial-chart" data-perc="90"><span>Optimization</span></div>
-        </li>
-        <li>
-          <div class="radial-chart" data-perc="85"><span>Machine Learning</span></div>
-        </li>
-      </ul>
-      <a href="about.html" class="cta-button" data-aos="zoom-in" data-aos-delay="400">
-        Learn More About Me
-      </a>
-    </section>
-
-    <!-- PROJECTS TEASER -->
-     <section id="projects" data-aos="fade-up">
-  <!-- paste your projects.html <section class="projects"> … </section> here -->
-</section>
-
-    <section id="projects-teaser" class="projects-preview" data-aos="fade-up">
-      <h2>Featured Project</h2>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/house-price-predictor.png" alt="House Price Predictor" loading="lazy" />
-        <div class="card-content">
-          <h3>House Price Predictor</h3>
-          <p>
-            Regression model using scikit-learn to predict house prices based on
-            features like location and size.
-          </p>
-          <a href="projects.html" class="cta-button">See All Projects</a>
-        </div>
-      </div>
-    </section>
-
-  </div><!-- /.scroll-container -->
-<section id="contact" data-aos="fade-up">
-  <!-- paste your contact.html <section class="contact"> … </section> here -->
-</section>
-
-  <!-- BACK TO TOP -->
-  <button id="backToTop" title="Back to top">↑</button>
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 700, once: true });
-  </script>
+    const sections = [
+      { id: 'about', canvas: 'particles-about' },
+      { id: 'projects', canvas: 'particles-projects' },
+      { id: 'contact', canvas: 'particles-contact' }
+    ];
 
-  <!-- Radial Charts Setup -->
-  <script>
-    document.querySelectorAll('.radial-chart').forEach(chart => {
-      const perc = chart.getAttribute('data-perc') / 100;
-      chart.style.setProperty('--perc', perc);
+    sections.forEach(sec => {
+      tsParticles.load(sec.canvas, {
+        fullScreen: { enable: false, zIndex: 0 },
+        detectRetina: true,
+        particles: {
+          number: { value: 30 },
+          size: { value: 2, random: { enable: true, minimumValue: 1 } },
+          move: { speed: 0.5 },
+          opacity: { value: 0.3 },
+        },
+        interactivity: {
+          detectsOn: 'canvas',
+          events: {
+            onHover: { enable: true, mode: 'bubble' }
+          },
+          modes: {
+            bubble: {
+              distance: 100,
+              size: 6,
+              duration: 2,
+              opacity: 0.8
+            }
+          }
+        }
+      });
     });
   </script>
-
-  <!-- Theme Toggle -->
-  <script>
-    const toggle = document.getElementById('theme-toggle');
-    const saved = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', saved);
-    toggle.onclick = () => {
-      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    };
-  </script>
-
-  <!-- Back-to-Top Behavior -->
-  <script>
-    const backBtn = document.getElementById('backToTop');
-    window.onscroll = () => backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  </script>
-  <div id="tsparticles" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></div>
-<script>
-  tsParticles.load("tsparticles", {
-    fpsLimit: 60,
-    particles: {
-      number: { value: 50 },
-      size: { value: 3 },
-      move: { speed: 1 }
-    },
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "repulse" }
-      }
-    }
-  });
-</script>
 
 </body>
 </html>

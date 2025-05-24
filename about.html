@@ -23,7 +23,7 @@
   <nav class="site-nav">
     <ul>
       <li><a href="index.html" class="underline-hover">Home</a></li>
-      <li><a href="#about" class="underline-hover">About</a></li>
+      <li><a href="about.html" class="underline-hover">About</a></li>
       <li><a href="projects.html" class="underline-hover">Projects</a></li>
       <li><a href="contact.html" class="underline-hover">Contact</a></li>
     </ul>
@@ -57,7 +57,7 @@
 
   <!-- AOS & Scripts (same as index.html) -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>s
+  <script>
     AOS.init({ duration: 700, once: true });
     document.querySelectorAll('.radial-chart').forEach(chart => {
       const perc = chart.getAttribute('data-perc')/100; chart.style.setProperty('--perc', perc);

@@ -1,76 +1,150 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Deeviyamssh | Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.7.1/tsparticles.bundle.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Portfolio of AI/ML projects and skills by Deeviyamssh.">
+  <meta name="keywords" content="AI, Machine Learning, Data Science, Portfolio, Python, Optimization">
+  <meta name="author" content="Deeviyamssh">
+  <meta property="og:title" content="Deeviyamssh | AI & ML Portfolio">
+  <meta property="og:description" content="Showcasing predictive modeling and optimization expertise.">
+  <meta property="og:url" content="https://deeviyamssh.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+
 </head>
 <body>
 
-  <nav class="site-nav">…</nav>
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation">
+    <div class="logo">Deeviyamssh</div>
+    <ul>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" aria-label="Toggle Theme">
+      <span class="icon" id="theme-icon">🌙</span>
+    </button>
+  </nav>
 
-  <!-- Hero (no particles) -->
-  <section id="hero" class="hero">…</section>
+  <!-- Sections -->
+  <main role="main">
+    <section id="hero" class="hero" data-aos="fade-down">
+      <img src="images/profile.jpg" alt="Deeviyamssh photo" class="hero-photo" />
+      <h1>Hi, I'm <span class="highlight">Deeviyamssh</span></h1>
+      <p>AI/ML Engineer | Predictive Modeling & Optimization</p>
+      <a href="#projects" class="cta-button">See My Work</a>
+    </section>
 
-  <!-- About with tsParticles container -->
-  <section id="about" class="particle-section" data-particles-section>
-    <canvas id="particles-about"></canvas>
-    <div class="content">
-      <h2>About Me</h2><p>Hello! I’m Deeviyamssh…</p>
+    <section id="about" class="section">
+      <h1>About Me</h1>
+      <p>I harness data-driven intelligence to solve complex challenges using AI and ML.</p>
+    </section>
+    <section id="skills" class="skills-preview" data-aos="fade-up">
+  <h2>Key Skills</h2>
+  <ul class="radial-skills">
+    <li><div class="radial-chart" data-perc="95"><span>Python</span></div></li>
+    <li><div class="radial-chart" data-perc="90"><span>Optimization</span></div></li>
+    <li><div class="radial-chart" data-perc="85"><span>Machine Learning</span></div></li>
+  </ul>
+</section>
+
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project-coming-soon">Projects coming soon. Stay tuned!</div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <form class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Your Email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Scroll back to top">↑</button>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>© 2025 Deeviyamssh. Built with ❤️ and AI tools.</p>
+      <div class="social-links">
+        <a href="https://github.com/Deeviyamssh" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/deeviyamssh-kasala-0a447a288/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
     </div>
-  </section>
+  </footer>
+  <canvas id="cursor-trail"></canvas>
 
-  <!-- Projects -->
-  <section id="projects" class="particle-section" data-particles-section>
-    <canvas id="particles-projects"></canvas>
-    <div class="content">
-      <h2>Projects</h2><p>House Price Predictor…</p>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="particle-section" data-particles-section>
-    <canvas id="particles-contact"></canvas>
-    <div class="content">
-      <h2>Contact</h2><p>deeviyamsshkasala@gmail.com</p>
-    </div>
-  </section>
-
+  <!-- Script -->
+  <script src="script.js" defer></script>
   <script>
-    const sections = [
-      { id: 'about', canvas: 'particles-about' },
-      { id: 'projects', canvas: 'particles-projects' },
-      { id: 'contact', canvas: 'particles-contact' }
-    ];
+  const canvas = document.getElementById('cursor-trail');
+  const ctx = canvas.getContext('2d');
 
-    sections.forEach(sec => {
-      tsParticles.load(sec.canvas, {
-        fullScreen: { enable: false, zIndex: 0 },
-        detectRetina: true,
-        particles: {
-          number: { value: 30 },
-          size: { value: 2, random: { enable: true, minimumValue: 1 } },
-          move: { speed: 0.5 },
-          opacity: { value: 0.3 },
-        },
-        interactivity: {
-          detectsOn: 'canvas',
-          events: {
-            onHover: { enable: true, mode: 'bubble' }
-          },
-          modes: {
-            bubble: {
-              distance: 100,
-              size: 6,
-              duration: 2,
-              opacity: 0.8
-            }
-          }
-        }
-      });
-    });
-  </script>
+  // Resize canvas to full window size
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  let mouse = { x: 0, y: 0 };
+  let trail = [];
+
+  // Update mouse position
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Add current mouse position to trail
+    trail.push({ x: mouse.x, y: mouse.y });
+
+    // Limit trail length
+    if (trail.length > 50) trail.shift();
+
+    // Draw trail
+    ctx.beginPath();
+    for (let i = 0; i < trail.length - 1; i++) {
+      const opacity = i / trail.length;
+      ctx.strokeStyle = `rgba(255, 0, 0, ${opacity})`; // Red color with varying opacity
+      ctx.lineWidth = 2;
+      ctx.moveTo(trail[i].x, trail[i].y);
+      ctx.lineTo(trail[i + 1].x, trail[i + 1].y);
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
 
 </body>
 </html>

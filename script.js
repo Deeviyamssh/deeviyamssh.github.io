@@ -61,23 +61,19 @@ backBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Cursor Trail Effect (throttled)
-let lastTrail = 0;
+// Cursor Glow Effect (subtle, short tail)
 document.addEventListener('mousemove', e => {
-  const now = Date.now();
-  if (now - lastTrail < 50) return;
-  lastTrail = now;
-
   const dot = document.createElement('div');
   dot.classList.add('trail-dot');
   dot.style.left = `${e.clientX}px`;
   dot.style.top = `${e.clientY}px`;
 
   const isDark = document.body.classList.contains('dark-mode');
-  const color = isDark ? '#fdd835' : '#b0bec5';
+  const color = isDark ? '#fdd835' : '#2563eb';
   dot.style.backgroundColor = color;
-  dot.style.boxShadow = `0 0 6px ${color}`;
+  dot.style.boxShadow = `0 0 12px 3px ${color}`;
+  dot.style.opacity = '0.5';
 
   document.body.appendChild(dot);
-  setTimeout(() => dot.remove(), 300);
+  setTimeout(() => dot.remove(), 220);
 });

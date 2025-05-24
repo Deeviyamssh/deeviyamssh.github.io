@@ -13,6 +13,7 @@
   --nav-bg: #2A2A2A;
   --nav-text: #F5F5F5;
 }
+html { scroll-behavior: smooth; }
 
 /* GLOBAL */
 * { box-sizing: border-box; }
@@ -161,3 +162,4 @@ a { color: var(--accent-color); text-decoration: none; }
   .project-card img, .projects-preview img { max-width: 100%; margin-bottom: 15px; }
   .site-nav ul { flex-direction: column; gap: 10px; }
 }
+section { padding: 80px 20px; } /* adjust 80px to match nav height */

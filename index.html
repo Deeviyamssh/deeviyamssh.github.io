@@ -35,68 +35,83 @@
 
   <!-- Sections -->
   <main role="main">
-    <section id="hero" class="hero" data-aos="fade-down">
-      <img src="images/profile.jpg" alt="Deeviyamssh photo" class="hero-photo" />
-      <h1>Hi, I'm <span class="highlight">Deeviyamssh</span></h1>
+    <section id="hero" class="section" data-parallax="blue">
+      <div class="wipe-mask"></div>
+      <div class="section-content">
+        <img src="images/profile.jpg" alt="Deeviyamssh photo" class="hero-photo" />
+        <h1> <span class="highlight">Hi, I'm Deeviyamssh</span></h1>
       <p>AI/ML Engineer | Predictive Modeling & Optimization</p>
       <a href="#projects" class="cta-button">See My Work</a>
+      </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section" data-parallax="yellow">
+      <div class="wipe-mask"></div>
+      <div class="section-content">
       <h1>About Me</h1>
       <p>I harness data-driven intelligence to solve complex challenges using AI and ML.</p>
-    </section>
-    <section id="skills" class="skills-preview" data-aos="fade-up">
-      <h2>Key Skills</h2>
-      <ul class="radial-skills">
-        <li>
-          <div class="radial-chart">
-            <div class="icon"><i class="fab fa-python"></i></div>
-            <div class="progress">
-              <svg width="72" height="72">
-                <circle cx="36" cy="36" r="30" />
-                <circle class="bar" cx="36" cy="36" r="30" style="stroke-dasharray: 179.07 188.4;" />
-              </svg>
-              <div class="progress-text">95%</div>
-            </div>
-            <span>Python</span>
-          </div>
-        </li>
-        <li>
-          <div class="radial-chart">
-            <div class="icon"><i class="fas fa-cogs"></i></div>
-            <div class="progress">
-              <svg width="72" height="72">
-                <circle cx="36" cy="36" r="30" />
-                <circle class="bar" cx="36" cy="36" r="30" style="stroke-dasharray: 169.56 188.4;" />
-              </svg>
-              <div class="progress-text">90%</div>
-            </div>
-            <span>Optimization</span>
-          </div>
-        </li>
-        <li>
-          <div class="radial-chart">
-            <div class="icon"><i class="fas fa-robot"></i></div>
-            <div class="progress">
-              <svg width="72" height="72">
-                <circle cx="36" cy="36" r="30" />
-                <circle class="bar" cx="36" cy="36" r="30" style="stroke-dasharray: 160.14 188.4;" />
-              </svg>
-              <div class="progress-text">85%</div>
-            </div>
-            <span>Machine Learning</span>
-          </div>
-        </li>
-      </ul>
+      </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="skills" class="section" data-parallax="blue">
+      <div class="wipe-mask"></div>
+      <div class="section-content">
+  <h2>Key Skills</h2>
+  <ul class="radial-skills">
+          <li>
+            <div class="radial-chart">
+              <div class="icon"><i class="fab fa-python"></i></div>
+              <div class="progress">
+                <svg width="72" height="72">
+                  <circle cx="36" cy="36" r="30" />
+                  <circle class="bar" cx="36" cy="36" r="30" style="stroke-dasharray: 179.07 188.4;" />
+                </svg>
+                <div class="progress-text">95%</div>
+              </div>
+              <span>Python</span>
+            </div>
+          </li>
+          <li>
+            <div class="radial-chart">
+              <div class="icon"><i class="fas fa-cogs"></i></div>
+              <div class="progress">
+                <svg width="72" height="72">
+                  <circle cx="36" cy="36" r="30" />
+                  <circle class="bar" cx="36" cy="36" r="30" style="stroke-dasharray: 169.56 188.4;" />
+                </svg>
+                <div class="progress-text">70%</div>
+              </div>
+              <span>Optimization</span>
+            </div>
+          </li>
+          <li>
+            <div class="radial-chart">
+              <div class="icon"><i class="fas fa-robot"></i></div>
+              <div class="progress">
+                <svg width="72" height="72">
+                  <circle cx="36" cy="36" r="30" />
+                  <circle class="bar" cx="36" cy="36" r="30" style="stroke-dasharray: 160.14 188.4;" />
+                </svg>
+                <div class="progress-text">85%</div>
+              </div>
+              <span>Machine Learning</span>
+            </div>
+          </li>
+  </ul>
+      </div>
+</section>
+
+    <section id="projects" class="section" data-parallax="dark">
+      <div class="wipe-mask"></div>
+      <div class="section-content">
       <h2>Projects</h2>
-      <div class="project-coming-soon">Projects coming soon. Stay tuned!</div>
+        <div class="project-coming-soon">Projects coming soon. Stay tuned!</div>
+      </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section" data-parallax="yellow">
+      <div class="wipe-mask"></div>
+      <div class="section-content">
       <h2>Contact</h2>
       <form class="contact-form">
         <label for="name">Name:</label>
@@ -107,6 +122,7 @@
         <textarea id="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send</button>
       </form>
+      </div>
     </section>
   </main>
 
@@ -127,6 +143,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Theme Toggle Button -->
+  
 
   <!-- Script -->
   <script src="script.js" defer></script>

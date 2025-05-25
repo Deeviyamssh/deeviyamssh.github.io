@@ -105,21 +105,67 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('mousemove', e => {
   const dot = document.createElement('div');
   dot.classList.add('trail-dot');
-  
-  // Get the accent color from CSS variable
-  const accentColor = getComputedStyle(document.documentElement)
-    .getPropertyValue('--accent-color')
-    .trim();
-  
-  dot.style.left = `${e.clientX - 4}px`;
-  dot.style.top = `${e.clientY - 4}px`;
-  dot.style.backgroundColor = accentColor;
-  dot.style.boxShadow = `0 0 16px 4px ${accentColor}`;
-  
+
+  // Get the element under the cursor
+  const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
+  let dotColor = '';
+  let shadowColor = '';
+
+  // Check the background color of the element under the cursor
+  if (elementUnderCursor) {
+    const computedStyle = getComputedStyle(elementUnderCursor);
+    const bgColor = computedStyle.backgroundColor;
+
+    // Get the computed values of beige and dark grey variables from CSS
+    const beigeComputed = getComputedStyle(document.documentElement).getPropertyValue('--beige').trim();
+    const darkGreyComputed = getComputedStyle(document.documentElement).getPropertyValue('--dark-grey').trim();
+
+    // Convert RGB to hex for reliable comparison if necessary (though direct string comparison of computedStyle might work for simple colors)
+    // A more robust solution might involve comparing against the *semantic* color variables, not just computed RGB.
+    // For simplicity, let's check if the computed background is close to our main theme colors.
+    // Note: computedStyle.backgroundColor returns rgb(r, g, b) or rgba(...) strings.
+
+    // This is a simplified check. In a complex scenario, we'd need a more robust color comparison.
+    // Let's assume the computed style will match our variable colors directly for the main sections.
+    if (bgColor === `rgb(${hexToRgb(beigeComputed).r}, ${hexToRgb(beigeComputed).g}, ${hexToRgb(beigeComputed).b})`) {
+        // If background is beige, set dot to dark grey and shadow to lavender (or accent)
+        dotColor = darkGreyComputed;
+        shadowColor = getComputedStyle(document.documentElement).getPropertyValue('--lavender').trim(); // Or another accent color
+    } else if (bgColor === `rgb(${hexToRgb(darkGreyComputed).r}, ${hexToRgb(darkGreyComputed).g}, ${hexToRgb(darkGreyComputed).b})`) {
+        // If background is dark grey, set dot to beige and shadow to lavender (or accent)
+        dotColor = beigeComputed;
+        shadowColor = getComputedStyle(document.documentElement).getPropertyValue('--lavender').trim(); // Or another accent color
+    } else {
+        // Default color if not over a main theme section (e.g., nav, footer, other elements)
+        dotColor = getComputedStyle(document.documentElement).getPropertyValue('--lavender').trim();
+        shadowColor = dotColor;
+    }
+  }
+
+  // Fallback if element under cursor is null or logic fails
+  if (!dotColor) {
+      dotColor = getComputedStyle(document.documentElement).getPropertyValue('--lavender').trim();
+      shadowColor = dotColor;
+  }
+
+  dot.style.left = `${e.clientX - 4}px`; // Adjust position to center dot
+  dot.style.top = `${e.clientY - 4}px`;   // Adjust position to center dot
+  dot.style.backgroundColor = dotColor;
+  dot.style.boxShadow = `0 0 16px 4px ${shadowColor}`;
+
   document.body.appendChild(dot);
-  
+
   // Remove the dot after animation
   setTimeout(() => {
     dot.remove();
   }, 180);
 });
+
+// Helper function to convert hex to RGB for comparison (basic version)
+function hexToRgb(hex) {
+    const bigint = parseInt(hex.replace('#', ''), 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+    return { r, g, b };
+}

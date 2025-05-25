@@ -1,58 +1,25 @@
 /* ========== Theme Variables ========== */
 :root {
-  /* Old colors */
-  /* --background-color: #121212; */ /* Defines an old dark background color variable */
-  /* --text-color: #ffffff; */ /* Defines an old light text color variable */
-  /* --primary-color: #007bff; */ /* Defines an old primary blue color variable */
-  /* --secondary-color: #6c757d; */ /* Defines an old secondary grey color variable */
-  /* --accent-color: #ff4081; */ /* Defines an old accent pink color variable */
-
-  /* New Beige/Dark Grey Palette (refined) */
-  --beige: #DDD0C8; /* Defines the beige color variable */
-  --dark-grey: #323232; /* Defines the dark grey color variable */
-  --lavender: #D3D3FF; /*Defines the lavender color variable */
-  /* Default (Light Mode) */
-  --background-color: var(--beige); /* Sets the default background color using the beige variable */
-  --text-color: var(--dark-grey); /* Sets the default text color using the dark grey variable */
-  --primary-color: var(--dark-grey); /* Sets the primary color (often used for actions/accents) using the dark grey variable in light mode */
-  --secondary-color: #DDD0C8; /* Defines a secondary color variable */
-  --accent-color: #323232; /* Defines an accent color variable */
-
-  /* Theme-specific colors */
-  --hero-background: var(--dark-grey); /* Sets the hero section background color using the dark-grey variable */
-  --section-background: var(--beige); /* Sets the default section background color using the beige variable */
-  --section-text: var(--dark-grey); /* Sets the default section text color using the dark grey variable */
-  --footer-background: var(--dark-grey); /* Sets the footer background color using the dark grey variable */
-  --footer-text: var(--beige); /* Sets the footer text color using the beige variable */
-
-  --nav-bg: #1a2233; /* Defines the navigation background color */
-  --nav-text: #f7fafd; /* Defines the navigation text color */
-  --highlight-color: #ffb703; /* Defines the highlight color */
+  --beige: #DDD0C8;
+  --dark-grey: #323232;
+  --lavender: #D3D3FF;
+  --background-color: var(--dark-grey);
+  --text-color: var(--beige);
+  --primary-color: var(--beige);
+  --secondary-color: #DDD0C8;
+  --accent-color: var(--beige);
+  --hero-background: var(--dark-grey);
+  --section-background: var(--dark-grey);
+  --section-text: var(--beige);
+  --footer-background: var(--dark-grey);
+  --footer-text: var(--beige);
+  --nav-bg: #1a2233;
+  --nav-text: #f7fafd;
+  --highlight-color: #ffb703;
 }
+
 body { scroll-snap-type: y mandatory; }
 section { scroll-snap-align: start; }
-
-body.dark-mode {
-  /* Old dark mode colors */
-  /* --background-color: #1e1e1e; */ /* Defines an old dark mode background color variable */
-  /* --text-color: #cccccc; */ /* Defines an old dark mode text color variable */
-  /* --primary-color: #ff6b6b; */ /* Defines an old dark mode primary color variable */
-  /* --secondary-color: #444444; */ /* Defines an old dark mode secondary color variable */
-  /* --accent-color: #ffaa00; */ /* Defines an old dark mode accent color variable */
-
-  /* Dark Mode with Beige/Dark Grey */
-  --background-color: var(--dark-grey); /* Sets the background color using the dark grey variable in dark mode */
-  --text-color: var(--beige); /* Sets the text color using the beige variable in dark mode */
-  --primary-color: var(--beige); /* Sets the primary color using the beige variable in dark mode */
-  --section-background: var(--dark-grey); /* Sets the section background color using the dark grey variable in dark mode */
-  --section-text: var(--beige); /* Sets the section text color using the beige variable in dark mode */
-  --footer-background: var(--beige); /* Sets the footer background color using the beige variable in dark mode */
-  --footer-text: var(--dark-grey); /* Sets the footer text color using the dark grey variable in dark mode */
-
-  --nav-bg: #101624; /* Defines the dark mode navigation background color */
-  --nav-text: #f7fafd; /* Defines the dark mode navigation text color */
-  --highlight-color: #ffd166; /* Defines the dark mode highlight color */
-}
 
 /* ========== Global Reset ========== */
 * {
@@ -62,10 +29,10 @@ body.dark-mode {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--background-color); /* Applies the background color variable */
-  color: var(--text-color); /* Applies the text color variable */
+  background-color: var(--background-color);
+  color: var(--text-color);
   scroll-behavior: smooth;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color changes */
+  transition: background-color 0.3s, color 0.3s;
   cursor: none;
 }
 body:after {
@@ -76,7 +43,7 @@ html {
   scroll-behavior: smooth;
 }
 a {
-  color: var(--accent-color); /* Applies the accent color variable to links */
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -85,8 +52,8 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: var(--nav-bg); /* Applies the navigation background color variable */
-  color: var(--nav-text); /* Applies the navigation text color variable */
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,65 +67,15 @@ a {
   gap: 20px;
 }
 .site-nav a {
-  color: var(--nav-text); /* Applies the navigation text color variable to navigation links */
+  color: var(--nav-text);
   position: relative;
 }
 .site-nav a.active {
-  color: var(--accent-color); /* Applies the accent color variable to active navigation links */
+  color: var(--accent-color);
   font-weight: bold;
 }
 .nav-hidden {
   top: -100px;
-}
-.site-nav { padding-right: 60px; }
-#theme-toggle { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
-
-/* ========== Theme Toggle ========== */
-#theme-toggle {
-  position: fixed;
-  left: 28px;
-  bottom: 32px;
-  z-index: 10001;
-  background: var(--background-color); /* Applies the background color variable to the theme toggle */
-  border: 2px solid var(--accent-color); /* Applies the accent color variable to the theme toggle border */
-  color: var(--accent-color); /* Applies the accent color variable to the theme toggle icon/text */
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  box-shadow: 0 2px 12px rgba(37,99,235,0.10); /* Adds a box shadow */
-  transition: background 0.2s, border 0.2s, color 0.2s; /* Smooth transition for color changes on the theme toggle */
-  cursor: pointer;
-}
-#theme-toggle:hover {
-  background: var(--accent-color); /* Applies the accent color variable to the background on hover */
-  color: #fff; /* Sets the text/icon color to white on hover */
-  border: 2px solid var(--highlight-color); /* Applies the highlight color variable to the border on hover */
-}
-#theme-icon { font-size: 1.3rem; }
-body.dark-mode #theme-icon {
-  color: #fdd835; /* Sets the icon color in dark mode */
-}
-body.dark-mode #theme-icon:hover {
-  text-shadow: 0 0 10px #fdd835; /* Adds a text shadow on hover in dark mode */
-}
-body.light-mode #theme-icon {
-  color: #b0bec5; /* Sets the icon color in light mode */
-}
-body.light-mode #theme-icon:hover {
-  text-shadow: 0 0 10px #ffffff; /* Adds a text shadow on hover in light mode */
-}
-@media (max-width: 600px) {
-  #theme-toggle {
-    top: 10px;
-    right: 10px;
-  }
-}
-@media (pointer: coarse) {
-  body { cursor: auto; }
 }
 
 /* ========== Sections ========== */
@@ -196,19 +113,19 @@ body.light-mode #theme-icon:hover {
   width: 100%;
   height: 140%;
   z-index: 0;
-  background: var(--hero-background); /* Applies the hero background color variable */
+  background: var(--hero-background);
   background-attachment: fixed;
   transform: translateY(0);
   transition: transform 1.2s cubic-bezier(.4,0,.2,1);
 }
 .section[data-parallax='blue']::before {
-  background: linear-gradient(120deg, #323232 0%, #323232 100%); /* Defines a blue parallax gradient */
+  background: linear-gradient(120deg, #323232 0%, #323232 100%);
 }
 .section[data-parallax='yellow']::before {
-  background: linear-gradient(to bottom, #DDD0C8 0%, #DDD0C8 100%); /* Defines a yellow parallax gradient */
+  background: linear-gradient(to bottom, #323232 0%, #323232 100%);
 }
 .section[data-parallax='dark']::before {
-  background: linear-gradient(120deg, #DDD0C8 0%, #DDD0C8 100%); /* Defines a dark parallax gradient */
+  background: linear-gradient(120deg, #323232 0%, #323232 100%);
 }
 .section.visible::before {
   transform: translateY(-30px);
@@ -217,21 +134,13 @@ body.light-mode #theme-icon:hover {
 .section .wipe-mask {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: var(--accent-color); /* Applies the accent color variable to the wipe mask background */
+  background: var(--accent-color);
   z-index: 3;
   transform: translateY(0);
   transition: transform 0.8s cubic-bezier(.4,0,.2,1);
 }
 .section.visible .wipe-mask {
   transform: translateY(100%);
-}
-
-.section:nth-of-type(odd) .wipe-mask {
-  background-color: var(--beige); /* Sets the background color for the wipe mask in odd sections to beige */
-}
-
-.section:nth-of-type(even) .wipe-mask {
-  background-color: var(--dark-grey); /* Sets the background color for the wipe mask in even sections to dark grey */
 }
 
 /* ========== Typography ========== */
@@ -262,25 +171,24 @@ p {
 .project-card {
   display: flex;
   gap: 20px;
-  background-color: var(--section-background); /* Applies the section background color variable to project cards */
-  border-left: 5px solid var(--accent-color); /* Applies the accent color variable to the left border of project cards */
+  background-color: var(--section-background);
+  border-left: 5px solid var(--accent-color);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a box shadow */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   margin-bottom: 30px;
 }
 
-/* Add specific text color for projects section */
 #projects {
-  color: var(--section-text); /* Applies the section text color variable to the projects section */
+  color: var(--section-text);
   padding: 80px 20px;
   text-align: center;
-  background-color: var(--section-background); /* Applies the section background color variable to the projects section */
+  background-color: var(--section-background);
 }
 
 #projects h2,
 #projects .project-coming-soon {
-    color: var(--section-text); /* Ensures text uses section text color variable within the projects section */
+    color: var(--section-text);
 }
 
 .project-card img {
@@ -290,7 +198,7 @@ p {
 }
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Adds a box shadow on hover */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
@@ -299,16 +207,19 @@ p {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  color: var(--beige);
 }
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
-  border: 1px solid #aaa; /* Sets a border color for form inputs */
+  border: 1px solid var(--beige);
   border-radius: 4px;
+  background-color: var(--dark-grey);
+  color: var(--beige);
 }
 .contact-form button {
-  background-color: var(--accent-color); /* Applies the accent color variable to the contact button background */
-  color: #fff; /* Sets the text color for the contact button to white */
+  background-color: var(--beige);
+  color: var(--dark-grey);
   padding: 12px 25px;
   border: none;
   border-radius: 4px;
@@ -321,32 +232,31 @@ p {
   bottom: 32px;
   right: 32px;
   font-size: 1.3rem;
-  background: var(--accent-color); /* Applies the accent color variable to the back to top button background */
-  color: #fff; /* Sets the text/icon color for the back to top button to white */
+  background: var(--accent-color);
+  color: var(--dark-grey);
   padding: 0.5rem 1.2rem 0.5rem 1.2rem;
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  display: none; /* Initially hidden, shown by JS */
   z-index: 999;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.10); /* Adds a box shadow */
-  transition: background 0.2s, transform 0.2s; /* Smooth transition for background and transform on the button */
+  box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+  transition: background 0.2s, transform 0.2s;
   outline: none;
-  display: flex; /* Uses flexbox to center icon and text */
+  display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 #backToTop:hover {
-  background: var(--highlight-color); /* Applies the highlight color variable to the background on hover */
-  color: var(--text-color); /* Applies the text color variable to the text/icon on hover */
-  transform: translateY(-2px) scale(1.07); /* Slight upward movement and scale on hover */
+  background: var(--highlight-color);
+  color: var(--text-color);
+  transform: translateY(-2px) scale(1.07);
 }
 #backToTop .arrow {
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
   border-radius: 50%;
-  background: rgba(255,255,255,0.12); /* Sets a semi-transparent white background for the arrow circle */
+  background: rgba(255,255,255,0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,30 +265,30 @@ p {
 /* ========== Cursor Trail Effect ========== */
 .trail-dot {
   position: fixed;
-  width: 8px; /* Sets the width of the cursor dot */
-  height: 8px; /* Sets the height of the cursor dot */
-  border-radius: 50%; /* Makes the dot round */
-  pointer-events: none; /* Allows clicks to pass through the dot */
-  z-index: 2147483647; /* Ensures the dot is always on top */
-  animation: fadeOut 0.18s ease-out forwards; /* Applies the fadeOut animation */
-  background-color: var(--lavender); /* Applies the accent color variable to the cursor dot background */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2147483647;
+  animation: fadeOut 0.18s ease-out forwards;
+  background-color: var(--lavender);
 }
 
 @keyframes fadeOut {
   0% {
-    opacity: 0.8; /* Starts the animation with 80% opacity */
-    transform: scale(1); /* Starts the animation at normal size */
+    opacity: 0.8;
+    transform: scale(1);
   }
   100% {
-    opacity: 0; /* Ends the animation with 0% opacity (fully faded) */
-    transform: scale(1.5); /* Grows the dot slightly as it fades */
+    opacity: 0;
+    transform: scale(1.5);
   }
 }
 
 /* ========== Footer ========== */
 .site-footer {
-  background: var(--footer-background); /* Applies the footer background color variable */
-  color: var(--footer-text); /* Applies the footer text color variable */
+  background: var(--footer-background);
+  color: var(--footer-text);
   text-align: center;
   padding: 20px;
 }
@@ -392,12 +302,12 @@ p {
   gap: 10px;
 }
 .footer-inner .social-links a {
-  color: var(--footer-text); /* Applies the footer text color variable to social links in the footer */
+  color: var(--footer-text);
   font-size: 1.5rem;
   margin: 0 8px;
 }
 .footer-inner .social-links a:hover {
-  color: var(--accent-color); /* Applies the accent color variable to social links on hover */
+  color: var(--accent-color);
 }
 
 /* ========== Hero Section ========== */
@@ -409,39 +319,36 @@ p {
   min-height: 80vh;
   text-align: center;
   padding: 0 20px 40px 20px;
-  background: var(--hero-background); /* Applies the hero background color variable */
+  background: var(--hero-background);
 }
 .hero-photo {
   width: 160px;
   height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 4px 24px rgba(37,99,235,0.15); /* Adds a box shadow for the hero photo */
+  box-shadow: 0 4px 24px rgba(37,99,235,0.15);
   margin-bottom: 1.5rem;
-  border: 4px solid var(--beige); /* Applies the beige color variable to the hero photo border */
-  background: #fff; /* Sets a white background behind the photo */
+  border: 4px solid var(--beige);
+  background: #fff;
 }
 .hero h1,
 #hero p,
 #hero .highlight {
-  color: var(--beige); /* This applies beige to h1, p, and .highlight inside #hero */
+  color: var(--beige);
 }
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: var(--beige); /* This also applies beige to h1 inside .hero */
+  color: var(--beige);
 }
 .hero .highlight {
-  color: var(--highlight-color); /* Applies the highlight color variable to highlighted text */
+  color: var(--highlight-color);
 }
 .hero p  { font-size: 1.2rem; margin-bottom: 1.5rem; }
 section:nth-of-type(even) {
-  background: var(--section-background); /* Applies the section background color variable to even-numbered sections */
-}
-body.dark-mode section:nth-of-type(even) {
-  background: var(--section-background); /* Applies the section background color variable to even-numbered sections in dark mode */
+  background: var(--section-background);
 }
 #cursor-trail {
   position: fixed;
@@ -456,23 +363,23 @@ body.dark-mode section:nth-of-type(even) {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 2rem;
-  background: var(--beige); /* Applies the beige color variable to the CTA button background */
-  color: var(--dark-grey); /* Sets the text color for the CTA button to dark grey */
+  background: var(--beige);
+  color: var(--dark-grey);
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.10); /* Adds a box shadow */
-  transition: background 0.2s, transform 0.2s; /* Smooth transition for background and transform on the button */
+  box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+  transition: background 0.2s, transform 0.2s;
 }
 .cta-button:hover {
-  background: var(--highlight-color); /* Applies the highlight color variable to the background on hover */
-  color: var(--text-color); /* Applies the text color variable to the text on hover */
-  transform: translateY(-2px) scale(1.04); /* Slight upward movement and scale on hover */
+  background: var(--highlight-color);
+  color: var(--text-color);
+  transform: translateY(-2px) scale(1.04);
 }
 .project-coming-soon {
   font-size: 1.2rem;
-  color: var(--accent-color); /* Applies the accent color variable to the 'Coming Soon' text color */
-  background: #e0e7ff; /* Sets a background color for the 'Coming Soon' message */
+  color: var(--accent-color);
+  background: var(--dark-grey);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
@@ -500,9 +407,9 @@ body.dark-mode section:nth-of-type(even) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #fff; /* Sets a white background for the radial chart */
+  background: var(--dark-grey);
   border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(37,99,235,0.08); /* Adds a box shadow */
+  box-shadow: 0 2px 12px rgba(37,99,235,0.08);
   padding: 24px 0 16px 0;
   position: relative;
   min-width: 140px;
@@ -511,7 +418,7 @@ body.dark-mode section:nth-of-type(even) {
 .radial-chart .icon {
   font-size: 2.2rem;
   margin-bottom: 10px;
-  color: var(--accent-color); /* Applies the accent color variable to the icon */
+  color: var(--beige);
 }
 .radial-chart .progress {
   position: relative;
@@ -525,10 +432,10 @@ body.dark-mode section:nth-of-type(even) {
 .radial-chart .progress circle {
   fill: none;
   stroke-width: 8;
-  stroke: #e0e7ff; /* Sets a background stroke color for the progress circle */
+  stroke: var(--dark-grey);
 }
 .radial-chart .progress .bar {
-  stroke: var(--accent-color); /* Applies the accent color variable to the progress bar stroke */
+  stroke: var(--beige);
   stroke-linecap: round;
   transition: stroke-dasharray 1s;
 }
@@ -539,12 +446,12 @@ body.dark-mode section:nth-of-type(even) {
   transform: translate(-50%, -50%);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent-color); /* Applies the accent color variable to the progress percentage text */
+  color: var(--beige);
 }
 .radial-chart span {
   margin-top: 12px;
   font-size: 1.1rem;
-  color: var(--text-color); /* Applies the text color variable to the skill name */
+  color: var(--beige);
   font-weight: 600;
 }
 @media (max-width: 700px) {
@@ -567,7 +474,6 @@ body.dark-mode section:nth-of-type(even) {
   opacity: 0;
 }
 
-/* Add specific text color for skills section heading */
 #skills h2 {
-    color: var(--beige); /* Sets the color of the skills section heading to beige */
+    color: var(--beige);
 }

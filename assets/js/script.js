@@ -46,15 +46,21 @@ let lastTrailTime = 0;
 
 document.addEventListener("mousemove", (e) => {
   const now = Date.now();
-  if (now - lastTrailTime < 30) return; // Throttle for performance
+
+  // Only create a dot every 25 milliseconds to avoid too many dots
+  if (now - lastTrailTime < 25) return;
   lastTrailTime = now;
 
   const dot = document.createElement("div");
   dot.className = "trail-dot";
-  dot.style.left = `${e.clientX - 4}px`;
-  dot.style.top = `${e.clientY - 4}px`;
+
+  // Position the dot near your mouse
+  dot.style.left = (e.pageX - 4) + "px";
+  dot.style.top = (e.pageY - 4) + "px";
+
+  // Add the dot to the page
   document.body.appendChild(dot);
 
-  // Clean up the dot after animation
+  // Remove the dot after its animation ends
   dot.addEventListener("animationend", () => dot.remove());
 });

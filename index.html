@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deeviyamssh | Portfolio</title>
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -31,36 +31,8 @@
     />
     <meta property="og:url" content="https://deeviyamssh.github.io/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <!-- Tailwind CSS CDN for demo; use PostCSS in production -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .glow-hover:hover,
-      .glow-hover:focus {
-        box-shadow: 0 0 16px 2px #d3d3ff;
-      }
-      .trail-dot {
-        position: fixed;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 50;
-        background: #d3d3ff;
-        opacity: 0.8;
-        animation: fadeOut 0.18s ease-out forwards;
-      }
-      @keyframes fadeOut {
-        to {
-          opacity: 0;
-          transform: scale(1.5);
-        }
-      }
-      html,
-      body {
-        font-family: "Inter", system-ui, sans-serif;
-        transition: background 0.4s, color 0.4s;
-      }
-    </style>
   </head>
   <body
     class="bg-[#323232] text-[#DDD0C8] min-h-screen font-sans scroll-smooth"
@@ -240,20 +212,21 @@
           href="mailto:deeviyamssh@example.com"
           class="underline hover:text-[#D3D3FF]"
           >deeviyamssh@example.com</a
-        >.
+        >
       </p>
     </section>
 
-    <!-- Cursor trail effect -->
-    <script>
-      document.body.addEventListener("mousemove", function (e) {
-        const dot = document.createElement("div");
-        dot.className = "trail-dot";
-        dot.style.left = e.pageX + "px";
-        dot.style.top = e.pageY + "px";
-        document.body.appendChild(dot);
-        setTimeout(() => dot.remove(), 180);
-      });
-    </script>
+    <!-- Back to Top button -->
+    <button
+      id="backToTop"
+      aria-label="Back to Top"
+      title="Back to Top"
+      type="button"
+    >
+      <i class="fas fa-arrow-up"></i> Top
+    </button>
+
+    <!-- External JS -->
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

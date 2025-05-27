@@ -1,2 +1,10 @@
-node_modules/
-.env
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VS Code workspace settings
+.vscode/
+
+# Vim swap files
+*.swp
+*.swo

@@ -16,13 +16,7 @@
   --nav-bg: #1a2233;
   --nav-text: #f7fafd;
   --highlight-color: #ffb703;
-}
-
-body {
-  scroll-snap-type: y mandatory;
-}
-section {
-  scroll-snap-align: start;
+  --cursor-color: rgba(211, 211, 255, 0.8);
 }
 
 /* ========== Global Reset ========== */
@@ -31,6 +25,18 @@ section {
   margin: 0;
   padding: 0;
 }
+
+/* Hide default cursor on desktop only */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, input, textarea, [role="button"] {
+    cursor: none;
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: var(--background-color);
@@ -38,19 +44,16 @@ body {
   scroll-behavior: smooth;
   transition: background-color 0.3s, color 0.3s;
 }
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
 
 body:after {
   content: "";
   pointer-events: none;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -170,7 +173,6 @@ p {
 #projects {
   color: var(--section-text);
   background-color: var(--section-background);
-  /* Remove text-align and padding to match other sections */
 }
 
 #projects h2,
@@ -497,7 +499,7 @@ section:nth-of-type(even) {
 .glow-hover:focus {
   box-shadow: none;
   background: var(--lavender);
-  transform: none; /* Prevent layout shift */
+  transform: none;
   color: black;
   transition: var(--background-color) 0.3s ease;
 }
@@ -515,4 +517,29 @@ button:focus {
     animation-delay: 0s !important;
     transition-duration: 0s !important;
   }
+}
+
+/* ========== Custom Cursor ========== */
+.cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--cursor-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: screen;
+  filter: blur(2px);
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+.cursor.hovering {
+  transform: scale(1.5);
+  background: var(--lavender);
+  filter: blur(4px);
 }

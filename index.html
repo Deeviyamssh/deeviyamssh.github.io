@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deeviyamssh | Portfolio</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="./favicon.ico" />
+    <!-- SEO Meta -->
+    <meta
+      name="description"
+      content="Portfolio of AI/ML projects and skills by Deeviyamssh."
+    />
+    <meta
+      name="keywords"
+      content="AI, Machine Learning, Data Science, Portfolio, Python, Optimization"
+    />
+    <meta name="author" content="Deeviyamssh" />
+    <meta property="og:title" content="Deeviyamssh | AI & ML Portfolio" />
+    <meta
+      property="og:description"
+      content="Showcasing predictive modeling and optimization expertise."
+    />
+    <meta property="og:url" content="https://deeviyamssh.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Tailwind CSS CDN for demo; use PostCSS in production -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .glow-hover:hover,
+      .glow-hover:focus {
+        box-shadow: 0 0 16px 2px #d3d3ff;
+      }
+      .trail-dot {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 50;
+        background: #d3d3ff;
+        opacity: 0.8;
+        animation: fadeOut 0.18s ease-out forwards;
+      }
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+      html,
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        transition: background 0.4s, color 0.4s;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#323232] text-[#DDD0C8] min-h-screen font-sans scroll-smooth"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 w-full z-40 bg-[#323232]/80 backdrop-blur border-b border-[#DDD0C8]/10"
+    >
+      <div
+        class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <ul class="flex space-x-8 text-sm">
+          <li>
+            <a href="#about" class="hover:text-[#D3D3FF] transition">About</a>
+          </li>
+          <li>
+            <a href="#experience" class="hover:text-[#D3D3FF] transition"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="hover:text-[#D3D3FF] transition"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-[#D3D3FF] transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <span class="font-bold text-lg tracking-wide order-2 ml-8"
+          >Deeviyamssh</span
+        >
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="hero-custom flex items-center min-h-screen px-0 py-0"
+    >
+      <!-- Left Column -->
+      <div
+        class="hero-left flex flex-col justify-between h-full w-full max-w-lg px-12 py-20"
+        style="min-width: 340px"
+      >
+        <div>
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-2 text-[#DDD0C8]">
+            Deeviyamssh
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-[#D3D3FF]">
+            AI/ML Engineer
+          </h2>
+          <p class="text-lg md:text-xl text-[#DDD0C8] mb-10">
+            I build accessible, scalable, pixel-perfect digital experiences for
+            the web.
+          </p>
+        </div>
+        <nav class="hero-vertical-nav flex flex-col gap-4 mb-10 mt-8">
+          <a
+            href="#about"
+            class="font-bold text-[#DDD0C8] border-l-4 border-[#D3D3FF] pl-4 py-1"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="font-bold text-[#DDD0C8] border-l-4 border-transparent hover:border-[#D3D3FF] pl-4 py-1 transition"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="font-bold text-[#DDD0C8] border-l-4 border-transparent hover:border-[#D3D3FF] pl-4 py-1 transition"
+            >Projects</a
+          >
+        </nav>
+        <div class="flex gap-5 mt-auto">
+          <a
+            href="https://github.com/Deeviyamssh"
+            aria-label="GitHub"
+            class="text-2xl text-[#DDD0C8] hover:text-[#D3D3FF] transition"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/deeviyamssh-kasala-0a447a288/"
+            aria-label="LinkedIn"
+            class="text-2xl text-[#DDD0C8] hover:text-[#D3D3FF] transition"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+      <!-- Right Column -->
+      <div
+        class="hero-right flex-1 flex items-center justify-center px-8 py-20"
+      >
+        <div class="max-w-2xl">
+          <p class="text-lg md:text-xl text-[#DDD0C8] mb-6">
+            I’m a developer passionate about crafting accessible, pixel-perfect
+            user interfaces that blend thoughtful design with robust
+            engineering. My favorite work lies at the intersection of design and
+            development, creating experiences that not only look great but are
+            meticulously built for performance and usability.
+          </p>
+          <p class="text-lg md:text-xl text-[#DDD0C8] mb-6">
+            Currently, I'm an
+            <span class="font-bold text-[#D3D3FF]">AI/ML Engineer</span> focused
+            on <span class="font-bold">predictive modeling</span> and
+            <span class="font-bold">optimization</span>. I love building
+            <span class="font-bold">scalable</span> and
+            <span class="font-bold">efficient</span> solutions that solve
+            <span class="font-bold text-[#D3D3FF]">real-world problems</span>
+            using <span class="font-bold">machine learning</span> and
+            <span class="font-bold">data science</span>.
+          </p>
+          <p class="text-lg md:text-xl text-[#DDD0C8]">
+            In my spare time, I’m usually learning, reading, or building new
+            things. Let’s connect and create something impactful together!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="section w-full py-24 px-8"
+      tabindex="-1"
+      aria-label="About"
+    >
+      <h2 class="text-2xl font-bold mb-6">About</h2>
+      <p class="text-base leading-relaxed">
+        I'm a passionate AI/ML Engineer focused on developing innovative
+        solutions using machine learning and optimization techniques. With
+        expertise in Python and various ML frameworks, I specialize in creating
+        efficient and scalable AI solutions that solve real-world problems.
+      </p>
+    </section>
+
+    <!-- Experience Section -->
+    <section
+      id="experience"
+      class="section w-full py-24 px-8"
+      tabindex="-1"
+      araia-label="Experience"
+    >
+      <h2 class="text-2xl font-bold mb-6">Experience</h2>
+      <p class="text-base leading-relaxed">[Experience content placeholder]</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="section w-full py-24 px-8 text-left"
+      tabindex="-1"
+      aria-label="Projects"
+    >
+      <h2 class="text-2xl font-bold mb-6">Projects</h2>
+      <p class="text-base leading-relaxed">[Projects content placeholder]</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="section w-full py-24 px-8"
+      tabindex="-1"
+      aria-label="Contact"
+    >
+      <h2 class="text-2xl font-bold mb-6">Contact</h2>
+      <form
+        action="#"
+        name="contact-form"
+        class="flex flex-col space-y-4 max-w-md"
+      >
+        <input
+          placeholder="Name"
+          type="text"
+          class="rounded px-4 py-2 bg-[#323232] text-[#DDD0C8] border border-[#DDD0C8]/20 focus:outline-none focus:ring-2 focus:ring-[#D3D3FF]"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          class="rounded px-4 py-2 bg-[#323232] text-[#DDD0C8] border border-[#DDD0C8]/20 focus:outline-none focus:ring-2 focus:ring-[#D3D3FF]"
+        />
+        <textarea
+          placeholder="Message"
+          rows="4"
+          class="rounded px-4 py-2 bg-[#323232] text-[#DDD0C8] border border-[#DDD0C8]/20 focus:outline-none focus:ring-2 focus:ring-[#D3D3FF]"
+        ></textarea>
+        <button
+          type="submit"
+          class="glow-hover bg-[#DDD0C8] text-[#323232] font-semibold rounded px-6 py-2 transition"
+        >
+          Send
+        </button>
+      </form>
+    </section>
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-[#DDD0C8] text-[#323232] px-4 py-2 rounded shadow-md hidden"
+    >
+      ↑ Top
+    </button>
+    <!-- Script -->
+    <script type="module" src="./script.js" defer></script>
+  </body>
+</html>

@@ -235,9 +235,10 @@ p {
   gap: 0.5rem;
 }
 #backToTop:hover {
-  background: var(--highlight-color);
-  color: var(--text-color);
+  background: var(--lavender);
+  color: var(--dark-grey);
   transform: translateY(-2px) scale(1.07);
+  box-shadow: none;
 }
 #backToTop .arrow {
   display: inline-block;
@@ -494,8 +495,11 @@ section:nth-of-type(even) {
 }
 .glow-hover:hover,
 .glow-hover:focus {
-  box-shadow: 0 0 16px 2px #d3d3ff;
-  transform: scale(1.05); /* Prevent layout shift */
+  box-shadow: none;
+  background: var(--lavender);
+  transform: none; /* Prevent layout shift */
+  color: black;
+  transition: var(--background-color) 0.3s ease;
 }
 /* Ensure focus styles are visible */
 a:focus,

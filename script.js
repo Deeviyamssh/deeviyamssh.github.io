@@ -1,23 +1,3 @@
-// ------------------------------
-// Hide/show navigation on scroll
-// ------------------------------
-const nav = document.querySelector(".site-nav"); // Make sure your nav has class="site-nav"
-let lastScroll = 0;
-
-window.addEventListener("scroll", () => {
-  if (!nav) return;
-  const currentScroll = window.pageYOffset;
-
-  // Hide nav on scroll down, show on scroll up
-  if (currentScroll > lastScroll) {
-    nav.classList.add("nav-hidden");
-  } else {
-    nav.classList.remove("nav-hidden");
-  }
-
-  lastScroll = currentScroll;
-});
-
 // --------------------------------------
 // Show/hide Back to Top button on scroll
 // --------------------------------------

@@ -56,37 +56,6 @@ a {
   text-decoration: none;
 }
 
-/* ========== Navigation ========== */
-.site-nav {
-  position: fixed;
-  transform: translateY(0);
-  width: 100%;
-  background-color: var(--nav-bg);
-  color: var(--nav-text);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-.site-nav a {
-  color: var(--nav-text);
-  position: relative;
-}
-.site-nav a.active {
-  color: var(--accent-color);
-  font-weight: bold;
-}
-.nav-hidden {
-  transform: translateY(-100%);
-}
-
 /* ========== Sections ========== */
 .section {
   opacity: 0;

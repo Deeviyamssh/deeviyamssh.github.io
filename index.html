@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deeviyamssh | Portfolio</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -65,6 +65,39 @@
   <body
     class="bg-[#323232] text-[#DDD0C8] min-h-screen font-sans scroll-smooth"
   >
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 w-full z-40 bg-[#323232]/80 backdrop-blur border-b border-[#DDD0C8]/10"
+    >
+      <div
+        class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <ul class="flex space-x-8 text-sm order-1">
+          <li>
+            <a href="#about" class="hover:text-[#D3D3FF] transition">About</a>
+          </li>
+          <li>
+            <a href="#experience" class="hover:text-[#D3D3FF] transition"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="hover:text-[#D3D3FF] transition"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-[#D3D3FF] transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <span class="font-bold text-lg tracking-wide order-2 ml-8"
+          >Deeviyamssh</span
+        >
+      </div>
+    </nav>
+
     <!-- Hero Section -->
     <section
       id="hero"
@@ -164,78 +197,63 @@
     >
       <h2 class="text-2xl font-bold mb-6">About</h2>
       <p class="text-base leading-relaxed">
-        I'm a passionate AI/ML Engineer focused on developing innovative
-        solutions using machine learning and optimization techniques. With
-        expertise in Python and various ML frameworks, I specialize in creating
-        efficient and scalable AI solutions that solve real-world problems.
+        I'm a passionate AI/ML engineer who loves to break down complex
+        challenges into manageable solutions. With a deep interest in research
+        and optimization, I specialize in building predictive models using
+        Python and state-of-the-art libraries.
       </p>
     </section>
 
     <!-- Experience Section -->
     <section
       id="experience"
-      class="section w-full py-24 px-8"
+      class="section w-full py-24 px-8 bg-[#DDD0C8] text-[#323232]"
       tabindex="-1"
-      araia-label="Experience"
+      aria-label="Experience"
     >
       <h2 class="text-2xl font-bold mb-6">Experience</h2>
-      <p class="text-base leading-relaxed">[Experience content placeholder]</p>
+      <p class="text-base leading-relaxed">[Experience details here...]</p>
     </section>
 
     <!-- Projects Section -->
     <section
       id="projects"
-      class="section w-full py-24 px-8 text-left"
+      class="section w-full py-24 px-8"
       tabindex="-1"
       aria-label="Projects"
     >
       <h2 class="text-2xl font-bold mb-6">Projects</h2>
-      <p class="text-base leading-relaxed">[Projects content placeholder]</p>
+      <p class="text-base leading-relaxed">[Project details here...]</p>
     </section>
 
     <!-- Contact Section -->
     <section
       id="contact"
-      class="section w-full py-24 px-8"
+      class="section w-full py-24 px-8 bg-[#DDD0C8] text-[#323232]"
       tabindex="-1"
       aria-label="Contact"
     >
       <h2 class="text-2xl font-bold mb-6">Contact</h2>
-      <form
-        action="#"
-        name="contact-form"
-        class="flex flex-col space-y-4 max-w-md"
-      >
-        <input
-          placeholder="Name"
-          type="text"
-          class="rounded px-4 py-2 bg-[#323232] text-[#DDD0C8] border border-[#DDD0C8]/20 focus:outline-none focus:ring-2 focus:ring-[#D3D3FF]"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          class="rounded px-4 py-2 bg-[#323232] text-[#DDD0C8] border border-[#DDD0C8]/20 focus:outline-none focus:ring-2 focus:ring-[#D3D3FF]"
-        />
-        <textarea
-          placeholder="Message"
-          rows="4"
-          class="rounded px-4 py-2 bg-[#323232] text-[#DDD0C8] border border-[#DDD0C8]/20 focus:outline-none focus:ring-2 focus:ring-[#D3D3FF]"
-        ></textarea>
-        <button
-          type="submit"
-          class="glow-hover bg-[#DDD0C8] text-[#323232] font-semibold rounded px-6 py-2 transition"
-        >
-          Send
-        </button>
-      </form>
+      <p class="text-base leading-relaxed">
+        Feel free to reach out via email at
+        <a
+          href="mailto:deeviyamssh@example.com"
+          class="underline hover:text-[#D3D3FF]"
+          >deeviyamssh@example.com</a
+        >.
+      </p>
     </section>
-    <button
-      id="backToTop"
-      class="fixed bottom-6 right-6 bg-[#DDD0C8] text-[#323232] px-4 py-2 rounded shadow-md hidden"
-    >
-      ↑ Top
-    </button>
-    <!-- Script -->
-    <script type="module" src="assets/js/script.js" defer></script>
+
+    <!-- Cursor trail effect -->
+    <script>
+      document.body.addEventListener("mousemove", function (e) {
+        const dot = document.createElement("div");
+        dot.className = "trail-dot";
+        dot.style.left = e.pageX + "px";
+        dot.style.top = e.pageY + "px";
+        document.body.appendChild(dot);
+        setTimeout(() => dot.remove(), 180);
+      });
+    </script>
   </body>
 </html>
